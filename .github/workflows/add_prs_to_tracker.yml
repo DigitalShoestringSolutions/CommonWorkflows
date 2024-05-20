@@ -1,0 +1,21 @@
+name: Add PR to the PR tracker project
+
+on:
+  pull_request:
+    types:
+      - opened
+      - reopened
+  workflow_call:
+    secrets:
+      ADD_TO_PROJECT_PAT:
+        required: true
+
+jobs:
+  add-to-project:
+    name: Add PR to project
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/add-to-project@v1.0.1
+        with:
+          project-url: https://github.com/orgs/DigitalShoestringSolutions/projects/1
+          github-token: ${{ secrets.ADD_TO_PROJECT_PAT }}
