@@ -1,4 +1,4 @@
-name: Add issues to the issue tracker project
+name: Add PR to the PR tracker project
 
 on:
   pull_request:

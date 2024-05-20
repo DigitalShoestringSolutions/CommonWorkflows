@@ -1,4 +1,4 @@
-name: Use issue to tracker workflow
+name: Use PR to tracker workflow
 
 on:
   pull_request:
@@ -7,7 +7,7 @@ on:
       - reopened
 
 jobs:
-  call-issue-to-tracker:
+  call-pr-to-tracker:
     uses: DigitalShoestringSolutions/CommonWorkflows/.github/workflows/add_prs_to_tracker.yml@master
     secrets:
       ADD_TO_PROJECT_PAT: ${{ secrets.ADD_TO_PROJECT_PAT }}
